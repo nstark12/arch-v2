@@ -74,13 +74,25 @@ export default function Hero() {
               className="object-cover"
               sizes="100vw"
             />
-            {/* Gradient overlay for text readability */}
+
+            {/* 1) Base vertical scrim (stronger) */}
+            {/* 1) Lighter vertical gradient */}
             <div
               className="absolute inset-0"
               aria-hidden="true"
               style={{
                 background:
-                  "linear-gradient(180deg, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.35) 40%, rgba(0,0,0,0.2) 100%)",
+                  "linear-gradient(180deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.28) 40%, rgba(0,0,0,0.18) 100%)",
+              }}
+            />
+
+            {/* 2) Softer left-to-right gradient (for text side) */}
+            <div
+              className="absolute inset-0 hidden md:block"
+              aria-hidden="true"
+              style={{
+                background:
+                  "linear-gradient(90deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.3) 35%, rgba(0,0,0,0.08) 70%, rgba(0,0,0,0.0) 100%)",
               }}
             />
           </div>
@@ -90,29 +102,33 @@ export default function Hero() {
       {/* Text overlay */}
       <div className="pointer-events-none absolute inset-0 flex items-center">
         <div className="mx-auto w-full max-w-6xl px-4">
+          {/* 3) Mobile 'chip' behind text for readability; remove at md+ */}
           <div className="pointer-events-auto max-w-2xl text-white">
-            <h1 className="text-4xl md:text-5xl font-semibold leading-tight">
-              Every person belongs.{" "}
-              <span className="text-secondary">Every family matters.</span>
-            </h1>
-            <p className="mt-4 text-lg md:text-xl text-white/95">
-              ARCh empowers individuals with disabilities, supports caregivers,
-              and educates our community to build a more inclusive future.
-            </p>
-            <div className="mt-6 flex flex-wrap gap-3">
-              <Link
-                href="/get-help"
-                className="bg-primary text-white px-5 py-3 rounded bg-primary-hover"
-              >
-                Get Help
-              </Link>
-              <Link
-                href="https://archchangeslives.networkforgood.com/projects/128949-every-day-giving"
-                className="bg-secondary text-black px-5 py-3 rounded font-semibold hover:brightness-95"
-                target="blank"
-              >
-                Donate
-              </Link>
+            <div className="md:bg-transparent md:backdrop-blur-0 bg-black/40 backdrop-blur-[2px] rounded-lg p-4 md:p-0 inline-block">
+              <h1 className="text-4xl md:text-5xl font-semibold leading-tight drop-shadow-[0_2px_6px_rgba(0,0,0,0.7)]">
+                Every person belongs.{" "}
+                <span className="text-secondary">Every family matters.</span>
+              </h1>
+              <p className="mt-4 text-lg md:text-xl text-white/95 drop-shadow-[0_2px_6px_rgba(0,0,0,0.6)]">
+                ARCh empowers individuals with disabilities, supports
+                caregivers, and educates our community to build a more inclusive
+                future.
+              </p>
+              <div className="mt-6 flex flex-wrap gap-3">
+                <Link
+                  href="/get-help"
+                  className="bg-primary text-white px-5 py-3 rounded bg-primary-hover"
+                >
+                  Get Help
+                </Link>
+                <Link
+                  href="https://archchangeslives.networkforgood.com/projects/128949-every-day-giving"
+                  className="bg-secondary text-black px-5 py-3 rounded font-semibold hover:brightness-95"
+                  target="_blank"
+                >
+                  Donate
+                </Link>
+              </div>
             </div>
           </div>
         </div>
