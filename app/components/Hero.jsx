@@ -107,8 +107,9 @@ export default function Hero() {
                 Get Help
               </Link>
               <Link
-                href="/donate"
+                href="https://archchangeslives.networkforgood.com/projects/128949-every-day-giving"
                 className="bg-secondary text-black px-5 py-3 rounded font-semibold hover:brightness-95"
+                target="blank"
               >
                 Donate
               </Link>

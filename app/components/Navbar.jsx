@@ -168,8 +168,9 @@ export default function Navbar() {
             </li>
             <li className="whitespace-nowrap">
               <Link
-                href="/donate"
+                href="https://archchangeslives.networkforgood.com/projects/128949-every-day-giving"
                 className="bg-secondary text-black px-3 py-2 rounded font-semibold hover:brightness-95 lg:text-sm xl:text-base"
+                target="blank"
               >
                 Donate
               </Link>
@@ -223,9 +224,10 @@ export default function Navbar() {
                 Get Help
               </Link>
               <Link
-                href="/donate"
+                href="https://archchangeslives.networkforgood.com/projects/128949-every-day-giving"
                 className="flex-1 text-center bg-secondary text-black px-4 py-2 rounded font-semibold hover:brightness-95"
                 onClick={() => setMenu(false)}
+                target="blank"
               >
                 Donate
               </Link>
